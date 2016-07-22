@@ -9,7 +9,7 @@
 html, body {
     font-size: 16px;
     line-height: 1.25em;
-    font-family: sans-serif;
+    font-family: "Trebuchet MS", "Helvetica", sans-serif;
 }
 a:link, a:visited {
     color: #ffffff;
@@ -97,7 +97,8 @@ p {  padding: 0.8em; }
     margin: 4px 4px 4px 4px;
     padding: 8px 8px 8px 8px;
     background: rgba(240,240,240,.7);
-    font-family: cursive;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-style: italic;
     font-size: 0.85em;
 }
 .oglasna-tabla .oglas-naslov {
@@ -107,7 +108,9 @@ p {  padding: 0.8em; }
     min-height: 40px;
     background:url(../img/bcg/pin.png) no-repeat top right;
     font-size: 1.05em;
-    font-weight: bold;
+    font-family: "Lucida Console", "Monaco", monospace;
+    font-weight: normal;
+    font-style: normal;
     color: #a5a5a5;
 }
 .vijesti {
@@ -155,6 +158,7 @@ p {  padding: 0.8em; }
     padding: 10px;
     background: #d5d5d5;
     font-size: 1.25em;
+    font-weight: bold;
     color: #aaaaaa;
 }
 .izdvojeno p {
@@ -214,11 +218,13 @@ p {  padding: 0.8em; }
     font-size: 1.25em;
     color: #d2d2d2;
 }
+.linkovi .zvezda {
+    margin-right: 10px;
+}
 .linkovi a {
     display: block;
     margin: 4px 4px 4px 16px;
-    padding: 5px 5px 5px 30px;
-    background: url(../img/bcg/star-1.png) no-repeat center left;
+    padding: 5px 5px 5px 5px;
 }
 .sekundarni .fb-dodatak {
     order: 0;
@@ -337,6 +343,7 @@ p {  padding: 0.8em; }
         background: rgba(255,255,255,.5);
         font-size: 1.25em;
         line-height: 1.25em;
+        text-shadow: 4px 4px 10px #5d5d5d;
     }
     .h-baner h2 {
         margin: 0px 0px 0px 0px;
