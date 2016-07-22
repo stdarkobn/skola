@@ -1,0 +1,718 @@
+@charset "utf-8";
+
+/***** Постављање подразумјеваних вриједности *****/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html, body {
+    font-size: 16px;
+    line-height: 1.25em;
+    font-family: sans-serif;
+}
+a:link, a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+a:hover, a:active {
+    color: #000000;
+}
+h1 { font-size: 1.65em; letter-spacing: 0.1em; }
+h2 { font-size: 1.3em; letter-spacing: 0.05em; }
+h3 { font-size: 1.0em; }
+p {  padding: 0.8em; }
+
+.uokviri {
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    box-shadow: 8px 8px 8px #d8d8d8;
+}
+#master {
+    min-width: 160px;
+    background-color: #eeeaaa;
+}
+/***************** Заглавље *****************/
+.sajt-heder {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 8px;
+    background: #aaaaaa;
+    height: 160px;
+}
+.h-logo {
+    flex: 1 1 160px;
+    text-align: center;
+}
+.h-baner {
+    display: none;
+}
+/***************** Навигација *****************/
+.meni {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    background: #d5d5d5;
+}
+.meni li {
+    flex: 1 1 50%;
+    list-style: none;
+}
+.meni li a {
+    display: block;
+    margin: 4px;
+    padding: 10px;
+    min-width: 142px; /* Viewport size: 300px - тачке преласка у нови ред */
+    letter-spacing: 0.15em;
+    font-weight: bold;
+}
+.meni li a:hover {
+    background: #aaaaaa;
+}
+
+/***************** Слајдер *****************/
+.slajder {
+    display: none;
+}
+
+/***************** Садржај *****************/
+.primarni {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    background: #bebebe;
+}
+.oglasna-tabla {
+    flex: 1 1 100%;
+    margin: 0px 0px 8px 0px;
+    padding: 5px 5px 5px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    background: #cccccc;
+}
+.oglasna-tabla a {
+    flex: 1 1 40%; /* Максимално два огласа у једном реду */
+    min-height: 150px;
+    min-width: 147px; /* Viewport size: 320px - тачке преласка у нови ред */
+    margin: 4px 4px 4px 4px;
+    padding: 8px 8px 8px 8px;
+    background: rgba(240,240,240,.7);
+    font-family: cursive;
+    font-size: 0.85em;
+}
+.oglasna-tabla .oglas-naslov {
+    display: block;
+    margin: 0px 0px 6px 0px;
+    padding-right: 24px;
+    min-height: 40px;
+    background:url(../img/bcg/pin.png) no-repeat top right;
+    font-size: 1.05em;
+    font-weight: bold;
+    color: #a5a5a5;
+}
+.vijesti {
+    flex: 1 1 100%;
+    margin: 0px 0px 8px 0px;
+    padding: 5px 5px 5px 5px;
+    background: #a2a2a2;
+}
+.vijesti h2 {
+    padding: 10px;
+    background: #d5d5d5;
+    font-size: 1.25em;
+    color: #aaaaaa;
+}
+.vijesti li {
+    list-style: none;
+    padding: 5px;
+    font-size: 0.85em;
+    color: #eeeeee;
+}
+.vijesti h3 {
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: baseline;
+    border-bottom: 2px solid #ffffff;
+    font-size: 1.15em;
+    color: #ffffff;
+}
+.vijesti a {
+    flex: 1 1 250px;
+}
+.vijesti .datum {
+    flex: 0 1 auto;
+    font-size: 0.75em;
+    color: #ffffff;
+    font-weight: normal;
+}
+.izdvojeno {
+    flex: 1 1 auto;
+    margin: 0px 0px 8px 0px;
+    padding: 0px 0px 0px 0px;
+    background: #dddddd;
+}
+.izdvojeno h2 {
+    padding: 10px;
+    background: #d5d5d5;
+    font-size: 1.25em;
+    color: #aaaaaa;
+}
+.izdvojeno p {
+    display: flex;
+    padding: 0px 0px 10px 10px;
+    font-size: 0.9em;
+}
+.izdvojeno img, 
+.izdvojeno .odlomak,
+.nastavi {
+    display: none;
+}
+.m-strelica-1, .m-strelica-2 {
+    flex: 1 0 48px;
+    margin: 0px 0px 0px 10px;    
+}
+.izdvojeno .m-strelica-1 {
+    background: #d5d5d5 url(../img/bcg/arrow-1.png) no-repeat center;
+    background-size: contain;
+}
+.sekundarni {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    background: #c1c1c1;
+}
+.sekundarni .tekstovi {
+    flex: 1 1 100%;
+    margin: 0px 0px 8px 0px;
+    padding: 0px 0px 0px 0px;
+    background: #dedede;
+}
+.tekstovi h2 {
+    padding: 10px;
+    background: #b2b2b2;
+    font-size: 1.25em;
+    color: #eeeeee;
+}
+.tekstovi p {
+    display: flex;
+    padding: 0px 0px 10px 10px;
+    font-size: 0.9em;
+}
+.tekstovi .m-strelica-2 {
+    background: #b2b2b2 url(../img/bcg/arrow-2.png) no-repeat center;
+    background-size: contain;
+}
+.sekundarni .linkovi {
+    order: 0;
+    flex: 1 0 160px; /* Минимална ширина 160 и расте, испод прелази у нови ред */
+    margin: 0px 0px 8px 0px;
+    padding: 0px 0px 0px 0px;
+    background: #dedede;
+}
+.linkovi h2 {
+    padding: 10px 10px 0px 10px;
+    font-size: 1.25em;
+    color: #d2d2d2;
+}
+.linkovi a {
+    display: block;
+    margin: 4px 4px 4px 16px;
+    padding: 5px 5px 5px 30px;
+    background: url(../img/bcg/star-1.png) no-repeat center left;
+}
+.sekundarni .fb-dodatak {
+    order: 0;
+    flex: 1 0 160px; /* Минимална ширина 160 и расте, испод прелази у нови ред */
+    margin: 0px 0px 8px 0px;
+    padding: 0px 0px 0px 0px;
+    background-color: #ffffff;
+    display: flex; /* Центрирања друштвеног додатка */
+    align-items: center;
+    justify-content: center;
+}
+.sekundarni .galerija {
+    order: 0;
+    flex: 1 1 100%;
+    margin: 0px 0px 8px 0px;
+    padding: 0px 0px 0px 0px;
+    background: #dedede;
+    display: flex; /* Центрирање галерије слика (линкова) */
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: space-around;
+}
+.galerija a {
+    flex: 1 0 31.33%; /* Максимално три слике у једном реду */
+    min-width: 100px;
+    margin: 1%;
+    text-align: center; /* Центрира слику у линку */
+}
+
+/***************** Подножје странице *****************/
+.sajt-futer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    background: #d4d4d4;
+}
+.f-meni {
+    flex: 1 1 100%;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+.f-meni ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.f-meni ul li {
+    flex: 1 1 48%;
+    min-width: 150px;
+    margin: 1%;
+    padding: 0px 10px 10px 10px;
+    list-style: none;
+}
+.f-meni a.glavni-link {
+    display: block;
+    margin: 4px;
+    border-bottom: 2px solid #ffffff;
+    font-weight: bold;
+}
+.f-meni a.pod-link {
+    display: block;
+    margin: 4px;
+    padding: 4px;
+    font-size: 0.8em;
+}
+.f-info {
+    order: 1;
+    flex: 1 1 100%;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 10px;
+    font-size: 0.8em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.f-info p {
+    flex: 1 0 150px;
+}
+.f-logo {
+    order: 2;
+    flex: 1 1 100%;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    display: flex; /* Центрира лого */
+    justify-content: center;
+    align-items: center;
+}
+.f-autor {
+    order: 3;
+    flex: 1 1 100%;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 15px 0px;
+    background: #ffffff;
+    text-align: center;
+    font-size: 0.7em;
+}
+
+
+/******************************************************/
+/*         Стил за уређаје преко 500 пиксела          */
+/******************************************************/
+@media screen and (min-width: 500px) {
+
+/********* Заглавње +500px ***********/
+    .h-logo {
+        flex: 0 0 160px;
+    }
+    .h-baner {
+        display: block;
+        flex: 1 1 auto;
+        background: #c2c2c2 url(../img/bcg/h-baner.jpg) no-repeat center;
+        background-size: cover;
+    }
+    .h-baner h1 {
+        margin: 20px 0px 0px 0px;
+        padding: 10px 10px 10px 10px;
+        background: rgba(255,255,255,.5);
+        font-size: 1.25em;
+        line-height: 1.25em;
+    }
+    .h-baner h2 {
+        margin: 0px 0px 0px 0px;
+        padding: 5px 5px 5px 5px;
+        font-size: 0.8em;
+    }
+    
+/********** Навигација +500px **********/
+    .meni {
+        justify-content: space-between;
+    }
+    .meni li {
+        flex: 1 1 auto; /* Ресетовање */
+        width: 12.5%;
+    }
+    .meni li a {
+        min-width: auto; /* Ресетовање */
+        height: 64px;
+    }
+    .link-text {
+        display: none;
+    }
+    .meni li a.link-1 {
+        background: url(../img/nav/ico48-1.png) no-repeat center;
+    }
+    .meni li a.link-2 {
+        background: url(../img/nav/ico48-2.png) no-repeat center;
+    }
+    .meni li a.link-3 {
+        background: url(../img/nav/ico48-3.png) no-repeat center;
+    }
+    .meni li a.link-4 {
+        background: url(../img/nav/ico48-4.png) no-repeat center;
+    }
+    .meni li a.link-5 {
+        background: url(../img/nav/ico48-5.png) no-repeat center;
+    }
+    .meni li a.link-6 {
+        background: url(../img/nav/ico48-6.png) no-repeat center;
+    }
+    .meni li a.link-7 {
+        background: url(../img/nav/ico48-7.png) no-repeat center;
+    }
+    .meni li a.link-8 {
+        background: url(../img/nav/ico48-8.png) no-repeat center;
+    }
+    .meni li a.link-1:hover,
+    .meni li a.link-2:hover,
+    .meni li a.link-3:hover,
+    .meni li a.link-4:hover,
+    .meni li a.link-5:hover,
+    .meni li a.link-6:hover,
+    .meni li a.link-7:hover,
+    .meni li a.link-8:hover {
+        background-color: #aaaaaa;
+    }
+    
+/********* Садржај +500 **********/
+    .oglasna-tabla a {
+        margin: 12px 12px 12px 12px;
+        border: 1px solid #a2a2a2;
+        border-radius: 12px;
+        box-shadow: 4px 4px 8px #d8d8d8;
+    }
+    .vijesti, .izdvojeno {  
+        flex: 1 1 100px;
+        margin: 4px 4px 8px 4px;
+    }
+    .izdvojeno {
+        padding: 5px 5px 5px 5px;
+        background: #e2e2e2;
+        border-radius: 10px;
+    }
+    .izdvojeno h2 {
+        background: #e2e2e2;
+        border-radius: 10px;
+    }
+    .izdvojeno p img {
+        display: block;
+        width: 100%;
+        max-width: 100%; /* Не дозвољава повећање слике преко природних димензија */
+        height: 10%; /* Због размјере 1:1 */
+        margin: 0px 0px 12px 0px;
+    }
+    .izdvojeno p, .tekstovi p {
+        flex-wrap: wrap;
+        justify-content:flex-end;
+        padding: 0px 10px 10px 10px;
+    }
+    .izdvojeno p .nastavi,
+    .tekstovi p .nastavi {
+        display: block;
+        margin: 0px;
+        padding-left: 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+        line-height: 30px;
+        font-family: cursive;
+    }
+    .izdvojeno p a.m-strelica-1,
+    .tekstovi p a.m-strelica-2 {
+        flex: 0 0 180px;
+        margin: 8px 4px 4px 4px;
+        height: auto;
+        background-position: right;
+    }
+    .tekstovi {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .tekstovi p {
+        border: 2px solid #c2c2c2;
+    }
+    .tekst-1 {
+        flex: 1 1 100%;
+        margin: 4px 4px 4px 4px;
+    }
+    .tekst-2, .tekst-3 {
+        flex: 1 1 40%;
+        margin: 4px 4px 8px 4px;
+    }
+    .sekundarni .galerija {
+        order: 0;
+        flex: 1 1 200px;
+        margin: 0px 4px 8px 4px;
+    }
+    .galerija a {
+        min-width: 31.33%; /* три слике у реду */
+    }
+    .sekundarni .fb-dodatak {
+        order: 1;
+        flex: 1 1 200px;
+        margin: 0px 4px 8px 4px;
+    }
+    .sekundarni .linkovi {
+        flex: 1 1 100%;
+        order: 0;
+    }
+    .linkovi a {
+        display: inline-block;
+        margin-left: 12px;
+    }
+    
+/********* Подножје странице +500 **********/
+    .f-meni ul {
+        flex-wrap: nowrap /* Постављање садржаја у један ред */
+        font-size: 0.85em;
+    }
+    .f-meni ul li {
+        flex: 1 1 auto; /* Постављање садржаја у један ред */
+        min-width: auto; /* Постављање садржаја у један ред */
+    }
+    .f-info {
+        flex: 1 1 75%;
+    }
+    .f-logo {
+        flex: 1 1 25%;
+    }
+}
+
+/******************************************************/
+/*         Стил за уређаје преко 760 пиксела          */
+/******************************************************/
+@media screen and (min-width: 760px) {
+
+/*********** Навигација +760px ***********/
+    .link-text {
+        display: block;
+    }
+    .meni li a {
+        padding: 42px 0px 0px 0px;
+        text-align: center;
+        font-weight: normal;
+    }
+    .meni li a.link-1,
+    .meni li a.link-2,
+    .meni li a.link-3,
+    .meni li a.link-4,
+    .meni li a.link-5,
+    .meni li a.link-6,
+    .meni li a.link-7,
+    .meni li a.link-8 {
+        background-position: top;
+    }
+    
+/********** Слајдер +760px *********/         
+    .slajder {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 8px;
+        border: 2px solid #c2c2c2;
+    }
+/********* Садржај +760px **********/
+    .oglasna-tabla {
+        flex: 1 1 400px;
+        max-width: 550px;
+        min-height: 360px;
+        background: url(../img/bcg/oglasna-bg-1.png) no-repeat center;
+        background-size: contain;
+        display: flex; /* Центрира обавјештења на огласној табли */
+        flex-wrap: wrap;
+        justify-content:space-around;
+    }
+    .vijesti {
+        flex: 2 1 200px;
+        margin: 0px 0px 8px 4px;
+        min-height: 360px;
+    }
+    .vijesti ul {
+        overflow: auto;
+        height: 312px;
+    }
+    .izdvojeno {
+        flex: 1 1 800px;
+        margin: 0px 4px 8px 4px;
+    }
+    .izdvojeno p {
+        display: block;
+        float: left;
+        padding: 0px 10px 0px 10px;
+    }
+    .izdvojeno p .odlomak {
+        display: block;
+        margin: 12px 0px;
+    }
+    .izdvojeno p img {
+        display: block;
+        float: left;
+        width: 30%;
+        margin: 0px 12px 12px 0px;
+    }
+    .izdvojeno p .nastavi {
+        float: right;
+        padding: 0px 40px 0px 0px;
+    }
+    .izdvojeno p a.m-strelica-1 {
+        float: right;
+        width: 180px;
+        margin: 0px 0px 12px 0px;
+    }
+    .tekst-1, .tekst-2, .tekst-3 {
+        flex: 1 1 30%;
+    }
+    .sekundarni .galerija {
+        order: 1;
+        flex: 1 1 30%;
+    }
+    .sekundarni .fb-dodatak {
+        order: 2;
+        flex: 1 1 30%;
+    }
+    .sekundarni .linkovi {
+        flex: 1 1 30%;
+        margin: 0px 4px 8px 4px;
+    }
+    .linkovi a {
+        display: block;
+    }
+/********* Подножје странице +760 **********/    
+    .f-meni {
+        flex: 1 0 50%;
+    }
+    .f-meni ul {
+        flex-wrap: nowrap;
+    }
+    .f-meni ul li {
+        font-size: 0.85em;
+    }
+    .f-info {
+        flex: 1 0 30%;
+        flex-wrap: nowrap;
+    }
+    .f-logo {
+        flex: 1 1 30%;
+    }
+}
+
+/******************************************************/
+/*         Стил за уређаје преко 1100 пиксела          */
+/******************************************************/
+@media screen and (min-width: 1100px) {
+    #master {
+        width: 1100px;
+        margin: 0 auto;
+    }
+    
+/*********** Навигација +1100px ***********/
+    .meni li a {
+        padding: 0px 0px 0px 36px;
+        text-align: left;
+        height: auto; /* Ресетовање */
+        line-height: 36px; /* Постављање висине */
+    }
+    .meni li a.link-1 {
+        background: url(../img/nav/ico36-1.png) no-repeat center left;
+    }
+    .meni li a.link-2 {
+        background: url(../img/nav/ico36-2.png) no-repeat center left;
+    }
+    .meni li a.link-3 {
+        background: url(../img/nav/ico36-3.png) no-repeat center left;
+    }
+    .meni li a.link-4 {
+        background: url(../img/nav/ico36-4.png) no-repeat center left;
+    }
+    .meni li a.link-5 {
+        background: url(../img/nav/ico36-5.png) no-repeat center left;
+    }
+    .meni li a.link-6 {
+        background: url(../img/nav/ico36-6.png) no-repeat center left;
+    }
+    .meni li a.link-7 {
+        background: url(../img/nav/ico36-7.png) no-repeat center left;
+    }
+    .meni li a.link-8 {
+        background: url(../img/nav/ico36-8.png) no-repeat center left;
+    }
+    
+/******************** Садржај +1100 ********************/
+    .oglasna-tabla {
+        flex: 0 0 546px;
+        margin: 8px 4px 8px 0px;
+    }
+    .vijesti {
+        flex: 1 1 267px;
+        margin: 8px 4px 8px 4px;
+    }
+    .izdvojeno {
+        flex: 1 1 271px;
+        margin: 8px 0px 8px 4px;
+        min-height: 360px;
+    }
+    .izdvojeno p .odlomak {
+        display: none;
+    }
+    .izdvojeno p img {
+        width: 40%;
+    }
+    .izdvojeno p a.m-strelica-1 {
+        margin: 24px 0px 12px 0px;
+    }
+    .sekundarni .tekstovi {
+        flex: 1 1 825px;
+    }
+    .sekundarni .linkovi {
+        order: 0;
+        flex: 1 1 271px;
+        margin: 0px 0px 8px 4px;
+    }
+    .linkovi h2 {
+        margin: 4px 0px 0px 0px;
+    }
+    .sekundarni .galerija {
+        order: 0;
+        flex: 1 1 825px;
+        margin: 0px 0px 8px 0px;
+    }
+    .galerija a {
+        flex: 1 1 auto;
+        min-width: auto; /* Ресетовање */
+    }
+    .sekundarni .fb-dodatak {
+        flex: 1 1 271px;
+        margin: 0px 0px 8px 4px;
+    }
+    
+/********* Подножје странице +1100 **********/    
+    .f-meni {
+        flex: 1 0 40%;
+    }
+    .f-info {
+        flex: 1 0 40%;
+        flex-wrap: nowrap;
+    }
+    .f-logo {
+        flex: 1 1 20%;
+        order: 0;
+    }
+}
