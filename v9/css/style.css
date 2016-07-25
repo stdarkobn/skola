@@ -230,8 +230,8 @@ p {  padding: 0.8em; }
 .sekundarni .fb-dodatak {
     order: 0;
     flex: 1 0 160px; /* Минимална ширина 160 и расте, испод прелази у нови ред */
-    margin: 0px 0px 8px 0px;
-    padding: 0px 10px 0px 10px;
+    margin: 8px 8px 8px 8px;
+    padding: 0px 0px 0px 0px;
     background-color: #ffffff;
     display: flex; /* Центрирања друштвеног додатка */
     align-items: center;
