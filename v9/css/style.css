@@ -57,8 +57,7 @@ p {  padding: 0.8em; }
 .meni li {
     flex: 1 1 40%;
     list-style: none;
-    padding: 0px 10px;
-    margin: 0px 5px;
+    margin: 0px 4px; /* Гугл се бунио безвезе */
 }
 .meni li a {
     display: block;
@@ -231,8 +230,8 @@ p {  padding: 0.8em; }
 .sekundarni .fb-dodatak {
     order: 0;
     flex: 1 0 160px; /* Минимална ширина 160 и расте, испод прелази у нови ред */
-    margin: 8px 8px 8px 8px;
-    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 8px 0px;
+    padding: 0px 10px 0px 10px;
     background-color: #ffffff;
     display: flex; /* Центрирања друштвеног додатка */
     align-items: center;
@@ -360,6 +359,7 @@ p {  padding: 0.8em; }
     .meni li {
         flex: 1 1 auto; /* Ресетовање */
         width: 12.5%;
+        margin: 0px 0px 0px 0px;
     }
     .meni li a {
         min-width: auto; /* Ресетовање */
