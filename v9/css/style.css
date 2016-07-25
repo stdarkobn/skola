@@ -58,6 +58,7 @@ p {  padding: 0.8em; }
     flex: 1 1 40%;
     list-style: none;
     padding: 0px 10px;
+    margin: 0px 5px;
 }
 .meni li a {
     display: block;
