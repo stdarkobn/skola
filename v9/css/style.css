@@ -55,7 +55,7 @@ p {  padding: 0.8em; }
     background: #d5d5d5;
 }
 .meni li {
-    flex: 1 1 50%;
+    flex: 1 1 40%;
     list-style: none;
 }
 .meni li a {
