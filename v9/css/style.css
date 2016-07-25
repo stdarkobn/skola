@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 /***** Постављање подразумјеваних вриједности *****/
 * {
@@ -236,6 +236,9 @@ p {  padding: 0.8em; }
     align-items: center;
     justify-content: center;
 }
+.fb-dodatak img {
+    margin-right: 5px;
+}
 .sekundarni .galerija {
     order: 0;
     flex: 1 1 100%;
@@ -293,7 +296,7 @@ p {  padding: 0.8em; }
     order: 1;
     flex: 1 1 100%;
     margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 10px;
+    padding: 0px 10px 0px 10px;
     font-size: 0.8em;
     display: flex;
     flex-wrap: wrap;
