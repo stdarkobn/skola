@@ -29,6 +29,7 @@ p {  padding: 0.8em; }
     box-shadow: 8px 8px 8px #d8d8d8;
 }
 #master {
+    padding:  0px 5px;
     min-width: 160px;
     background-color: #eeeaaa;
 }
@@ -57,7 +58,7 @@ p {  padding: 0.8em; }
 .meni li {
     flex: 1 1 40%;
     list-style: none;
-    margin: 0px 4px; /* Гугл се бунио безвезе */
+/*     margin: 0px 4px; Гугл се бунио безвезе */
 }
 .meni li a {
     display: block;
@@ -177,7 +178,7 @@ p {  padding: 0.8em; }
     margin: 0px 0px 0px 10px;    
 }
 .izdvojeno .m-strelica-1 {
-    background: #d5d5d5 url(../img/bcg/arrow-1.svg) no-repeat center;
+    background: #d5d5d5 url(../img/bcg/str-1.svg) no-repeat center;
     background-size: contain;
 }
 .sekundarni {
@@ -204,7 +205,7 @@ p {  padding: 0.8em; }
     font-size: 0.9em;
 }
 .tekstovi .m-strelica-2 {
-    background: #b2b2b2 url(../img/bcg/arrow-2.svg) no-repeat center;
+    background: #b2b2b2 url(../img/bcg/str-2.svg) no-repeat center;
     background-size: contain;
 }
 .sekundarni .linkovi {
@@ -230,7 +231,8 @@ p {  padding: 0.8em; }
 .sekundarni .fb-dodatak {
     order: 0;
     flex: 1 0 160px; /* Минимална ширина 160 и расте, испод прелази у нови ред */
-    margin: 0px 4px 8px 4px;
+/*    margin: 0px 4px 8px 4px;  Гугл се бунио */
+    margin: 0px 0px 8px 0px;
     padding: 0px 10px 0px 10px;
     background-color: #ffffff;
     display: flex; /* Центрирања друштвеног додатка */
