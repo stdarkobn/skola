@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/normal.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/slider.css" media="screen">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>ЈУ Економска школа :: Бијељина</title>
 </head>
@@ -33,7 +34,120 @@
         </nav>
 
         <div class="slajder">
-            <img src="img/sld/slider-1.jpg" alt="Republički prvaci iz Knjigovodstva">
+            <!-- Opcije za slajder: autoplej ili izbor jednog od tri slajda -->
+            <input id="sld-0" name="sld" type="radio" checked>
+            <input id="sld-1" name="sld" type="radio" class="">
+            <input id="sld-2" name="sld" type="radio" class="">
+            <input id="sld-3" name="sld" type="radio" class="">
+            <input id="sld-4" name="sld" type="radio" class="">
+            <input id="sld-5" name="sld" type="radio" class="">
+
+            <!-- Slike na slajderu -->
+            <ul class="slajdovi">
+                <li id="ram" aria-hidden="true"><img  src="img/bcg/slajd-ram.png" alt="Ram za slajder"></li>
+                <li class="slajd s1">
+                    <a href="#" target="_blank">
+                        <img src="img/sld/slajd-1.jpg" alt="Opis prvog slajda" title="Naslov za sliku 1">
+                    </a>
+                </li>
+                <li class="slajd s2">
+                    <a href="#" target="_blank">
+                        <img src="img/sld/slajd-2.jpg" alt="Opis drugog slajda" title="Naslov za sliku 2">
+                    </a>
+                </li>
+                <li class="slajd s3">
+                    <a href="#" target="_blank">
+                        <img src="img/sld/slajd-3.jpg" alt="Opis trećeg slajda" title="Naslov za sliku 3">
+                    </a>
+                </li>
+                <li class="slajd s4">
+                    <a href="#" target="_blank">
+                        <img src="img/sld/slajd-4.jpg" alt="Opis trećeg slajda" title="Naslov za sliku 3">
+                    </a>
+                </li>
+                <li class="slajd s5">
+                    <a href="#" target="_blank">
+                        <img src="img/sld/slajd-5.jpg" alt="Opis trećeg slajda" title="Naslov za sliku 3">
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Naslov i opis slajdova -->
+            <div class="naslovi">
+                <label class="s1">
+                    <span class="naslov">
+                        <span class="tekst">Неки наслов на првом слајду</span>
+                    </span>
+                    <span class="opis">
+                        <span class="tekst">Opis za prvi slajd  koji može biti malo duži šta znam... čisto da probam kako bi izgledalo u tom slučaju...</span>
+                    </span>
+                </label>
+                <label class="s2">
+                    <span class="naslov">
+                        <span class="tekst">Наслов за слајд број 2</span>
+                    </span>
+                    <span class="opis">
+                        <span class="tekst">Праесент сусципит сусципит еффицитур. Суспендиссе орнаре еx ут теллус елеифенд фауцибус. Пхаселлус тристиqуе, елит иацулис дапибус моллис, одио фелис </span>
+                    </span>
+                </label>
+                <label class="s3">
+                    <span class="naslov">
+                        <span class="tekst">Наслов за слајд број 3</span>
+                    </span>
+                    <span class="opis">
+                        <span class="tekst">Донец пеллентесqуе порттитор дуи ац молестие. Qуисqуе ац либеро масса.</span>
+                    </span>
+                </label>
+                <label class="s4">
+                    <span class="naslov">
+                        <span class="tekst">Наслов за слајд број 4</span>
+                    </span>
+                    <span class="opis">
+                        <span class="tekst">Пеллентесqуе еуисмод, неqуе вел цоммодо бибендум, ми долор претиум ест, аццумсан цондиментум qуам лорем сит амет масса.</span>
+                    </span>
+                </label>
+                <label class="s5">
+                    <span class="naslov">
+                        <span class="tekst">Наслов за слајд број 5</span>
+                    </span>
+                    <span class="opis">
+                        <span class="tekst">Маурис претиум анте маттис лацус волутпат, витае иацулис сапиен иацулис.</span>
+                    </span>
+                </label>
+            </div>
+
+            <!-- Kontrola za autoplej -->
+            <div class="autoplej">
+                <label class="auto" for="sld-0"><span></span></label>
+                <label class="stop s1" for="sld-1"><span></span></label>
+                <label class="stop s2" for="sld-2"><span></span></label>
+                <label class="stop s3" for="sld-3"><span></span></label>
+                <label class="stop s4" for="sld-4"><span></span></label>
+                <label class="stop s5" for="sld-5"><span></span></label>
+            </div>
+
+            <!-- Lijeva i desna strelica -->
+            <div class="strelice">
+                <label class="lijeva s1" for="sld-1"><span></span></label>
+                <label class="lijeva s2" for="sld-2"><span></span></label>
+                <label class="lijeva s3" for="sld-3"><span></span></label>
+                <label class="lijeva s4" for="sld-4"><span></span></label>
+                <label class="lijeva s5" for="sld-5"><span></span></label>
+                <label class="desna s1" for="sld-1"><span></span></label>
+                <label class="desna s2" for="sld-2"><span></span></label>
+                <label class="desna s3" for="sld-3"><span></span></label>
+                <label class="desna s4" for="sld-4"><span></span></label>
+                <label class="desna s5" for="sld-5"><span></span></label>
+            </div>
+
+            <!-- Navigacija na slajderu i izbor slajda -->
+            <div class="krugovi">
+                <label class="s1" for="sld-1"><span class="krug"></span></label>
+                <label class="s2" for="sld-2"><span class="krug"></span></label>
+                <label class="s3" for="sld-3"><span class="krug"></span></label>
+                <label class="s4" for="sld-4"><span class="krug"></span></label>
+                <label class="s5" for="sld-5"><span class="krug"></span></label>
+            </div>
         </div>
 
         <main>

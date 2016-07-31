@@ -1,0 +1,502 @@
+﻿@charset "utf-8";
+
+/************************************ Slajder ************************/
+.slajder {
+    width: 100%;
+    background-color: #bababa;
+    position: relative;
+    overflow: hidden;
+}
+.slajder input[type="radio"] {
+    display: none;
+}
+/************************************ Slajdovi ************************/
+.slajdovi {
+    position: relative;
+    z-index: 0;
+    list-style: none;
+    overflow: hidden;
+}
+/* Podešava visinu slajdera */
+.slajdovi #ram {
+    width: 100%;
+    visibility: hidden;
+    position: relative;
+    z-index: -1;
+    line-height: 0em;
+}
+.slajder:hover .autoplej {
+    opacity: 1;
+    transform: translateY(0);
+}
+.slajdovi img {
+    width: 100%;
+}
+.slajd {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    line-height: 0em;
+    opacity: 0;
+    transition: all 2s ease -1s, opacity 2s ease -2s,
+                transform 10s ease 0s;
+}
+#sld-1:checked ~ .slajdovi > .s1,
+#sld-2:checked ~ .slajdovi > .s2,
+#sld-3:checked ~ .slajdovi > .s3,
+#sld-4:checked ~ .slajdovi > .s4,
+#sld-5:checked ~ .slajdovi > .s5 {
+    opacity: 1;
+    transform: scale(1.2);
+}
+#sld-1:checked ~ .slajdovi > .s1,
+#sld-3:checked ~ .slajdovi > .s3,
+#sld-5:checked ~ .slajdovi > .s5 {
+    transform-origin: 100% 0%;
+}
+#sld-2:checked ~ .slajdovi > .s2,
+#sld-4:checked ~ .slajdovi > .s4 {
+    transform-origin: 0% 100%;
+}
+/********************************** Naslovi **************************/
+.naslovi {
+    z-index: 2;
+}
+.naslovi > label {
+    position: absolute;
+    bottom: 15%;
+    top: auto;
+    left: 5%;
+    max-width: 40%;
+    word-break: normal;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: normal;
+}
+.naslovi > label span {
+    display: inline-block;
+}
+.naslovi > label > span {
+    vertical-align: top;
+    color: #e2e2e2;
+    position: relative;
+    padding: 5%;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.naslov {
+    background: rgba(0,0,0,0.4);
+    margin: -10px 0px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 4;
+    transform: translateY(-10px);
+    transition:
+            950ms opacity 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550),
+            950ms transform 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550),
+            950ms visibility 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+.opis {
+    background: rgba(0,0,0,0.2);
+    font-size: 0.7em;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 3;
+    transform: translateY(10px);
+    transition:
+        950ms opacity 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550),
+        950ms transform 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550),
+        950ms visibility 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+.naslov .tekst {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition:
+        950ms opacity 750ms cubic-bezier(0.680, -0.550, 0.265, 1.550),
+        950ms transform 750ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+.opis .tekst {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        950ms opacity 1000ms cubic-bezier(0.680, -0.550, 0.265, 1.550),
+        950ms transform 1000ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+#sld-1:checked ~ .naslovi > .s1 > .naslov,
+#sld-1:checked ~ .naslovi > .s1 > .opis,
+#sld-2:checked ~ .naslovi > .s2 > .naslov,
+#sld-2:checked ~ .naslovi > .s2 > .opis,
+#sld-3:checked ~ .naslovi > .s3 > .naslov,
+#sld-3:checked ~ .naslovi > .s3 > .opis,
+#sld-4:checked ~ .naslovi > .s4 > .naslov,
+#sld-4:checked ~ .naslovi > .s4 > .opis,
+#sld-5:checked ~ .naslovi > .s5 > .naslov,
+#sld-5:checked ~ .naslovi > .s5 > .opis {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+#sld-1:checked ~ .naslovi > .s1 .tekst,
+#sld-2:checked ~ .naslovi > .s2 .tekst,
+#sld-3:checked ~ .naslovi > .s3 .tekst,
+#sld-4:checked ~ .naslovi > .s4 .tekst,
+#sld-5:checked ~ .naslovi > .s5 .tekst {
+    opacity: 1;
+    transform: translateY(0);
+}
+/*********************************************************/
+@keyframes prikažiNaslov {
+  0.83%, 19.16%  {
+    opacity: 1;
+    z-index: 4;
+    visibility: visible;
+    transform: translateY(10px);
+  }
+  0.83%, 19.16%   {
+    opacity: 1;
+    z-index: 4;
+    visibility: visible;
+    transform: translateY(0px);
+  }
+  21.19%  {
+    opacity: 0;
+    z-index: 4;
+    visibility: hidden;
+    transform: translateY(-100px);
+  }
+  21.20%, 100%  { z-index: 0; }
+}
+#sld-0:checked ~ .naslovi > .s1 > .naslov {
+    animation: prikažiNaslov 40s infinite -1.4s ease;
+}
+#sld-0:checked ~ .naslovi > .s2 > .naslov {
+    animation: prikažiNaslov 40s infinite 6.6s ease;
+}
+#sld-0:checked ~ .naslovi > .s3 > .naslov {
+    animation: prikažiNaslov 40s infinite 14.6s ease;
+}
+#sld-0:checked ~ .naslovi > .s4 > .naslov {
+    animation: prikažiNaslov 40s infinite 22.6s ease;
+}
+#sld-0:checked ~ .naslovi > .s5 > .naslov {
+    animation: prikažiNaslov 40s infinite 30.6s ease;
+}
+/*********************************************************/
+@keyframes PrikažiOpis {
+  0.83%, 19.16% {
+      opacity: 1;
+      z-index: 3;
+      visibility: visible;
+      transform: translateY(-10px);
+    }
+  0.83%, 19.16% {
+      opacity: 1;
+      z-index: 3;
+      visibility: visible;
+      transform: translateY(0px);
+    }
+  21.19% {
+      opacity: 0;
+      z-index: 3;
+      visibility: hidden;
+      transform: translateY(100px);
+    }
+  21.20%, 100% {
+      z-index: 0;
+    }
+} 
+#sld-0:checked ~ .naslovi > .s1 > .opis {
+    animation: PrikažiOpis 40s infinite -1.2s ease;
+}
+#sld-0:checked ~ .naslovi > .s2 > .opis {
+    animation: PrikažiOpis 40s infinite 6.8s ease;
+}
+#sld-0:checked ~ .naslovi > .s3 > .opis {
+    animation: PrikažiOpis 40s infinite 14.8s ease;
+}
+#sld-0:checked ~ .naslovi > .s4 > .opis {
+    animation: PrikažiOpis 40s infinite 22.8s ease;
+}
+#sld-0:checked ~ .naslovi > .s5 > .opis {
+    animation: PrikažiOpis 40s infinite 30.8s ease;
+}
+/*********************************************************/
+@keyframes TekstNaslov {
+    0.83%, 19.16% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+    1.19%, 18.80% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    21.20%, 100% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+#sld-0:checked ~ .naslovi > .s1 > .naslov .tekst {
+    animation: TekstNaslov 40s infinite -1.25s ease;
+}
+#sld-0:checked ~ .naslovi > .s2 > .naslov .tekst {
+    animation: TekstNaslov 40s infinite 6.75s ease;
+}
+#sld-0:checked ~ .naslovi > .s3 > .naslov .tekst {
+    animation: TekstNaslov 40s infinite 14.75s ease;
+}
+#sld-0:checked ~ .naslovi > .s4 > .naslov .tekst {
+    animation: TekstNaslov 40s infinite 22.75s ease;
+}
+#sld-0:checked ~ .naslovi > .s5 > .naslov .tekst {
+    animation: TekstNaslov 40s infinite 30.75s ease;
+}
+/*********************************************************/
+@keyframes TekstOpis {
+    0.83%, 19.16% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+    1.19%, 18.80% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    21.20%, 100% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
+#sld-0:checked ~ .naslovi > .s1 > .opis .tekst {
+    animation: TekstOpis 40s infinite -1s ease;
+}
+#sld-0:checked ~ .naslovi > .s2 > .opis .tekst {
+    animation: TekstOpis 40s infinite 7s ease;
+}
+#sld-0:checked ~ .naslovi > .s3 > .opis .tekst {
+    animation: TekstOpis 40s infinite 15s ease;
+}
+#sld-0:checked ~ .naslovi > .s4 > .opis .tekst {
+    animation: TekstOpis 40s infinite 23s ease;
+}
+#sld-0:checked ~ .naslovi > .s5 > .opis .tekst {
+    animation: TekstOpis 40s infinite 31s ease;
+}
+/************************************ Kontrole **************************/
+.autoplej {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    top: 40%;
+    opacity: 0;
+}
+.auto {
+    background: rgba(0,0,0,0) url(../img/bcg/reply.svg) no-repeat center;
+    background-size: contain;
+}
+.stop {
+    background: rgba(0,0,0,.1) url(../img/bcg/pza.svg) no-repeat center;
+    background-size: contain;
+}
+.autoplej > label {
+    position: absolute;
+    z-index: 2;
+    left: calc(50% - 20px);
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+/******************************************************/
+@keyframes autoPlej {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    0%, 20%  {
+        z-index: 2;
+    }
+    20%, 100%  {
+        z-index: 0;
+    }
+    5%, 20% {
+        opacity: 1;
+    }
+    25%, 80% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+#sld-0:checked ~ .slajdovi > .s1 {
+    animation: autoPlej 40s infinite -2s ease-in-out;
+    transform-origin: 0% 100%;
+}
+#sld-0:checked ~ .slajdovi > .s2 {
+    animation: autoPlej 40s infinite 6s ease-in-out;
+    transform-origin: 100% 0%;
+}
+#sld-0:checked ~ .slajdovi > .s3 {
+    animation: autoPlej 40s infinite 14s ease-in-out;
+    transform-origin: 100% 100%;
+}
+#sld-0:checked ~ .slajdovi > .s4 {
+    animation: autoPlej 40s infinite 22s ease-in-out;
+    transform-origin: 0% 100%;
+}
+#sld-0:checked ~ .slajdovi > .s5 {
+    animation: autoPlej 40s infinite 30s ease-in-out;
+    transform-origin: 100% 0%;
+}
+/************************************ Strelice *****************************/
+.strelice {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    top: 40%;
+    opacity: 0
+}
+.strelice > label {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.strelice .lijeva {
+    left: 0px;
+    background: url(../img/bcg/l-str.svg) no-repeat center;
+    background-size: contain;
+}
+.strelice .desna {
+    right: 0px;
+    background: url(../img/bcg/d-str.svg) no-repeat center;
+    background-size: contain;
+}
+/***************************************************/
+@keyframes LijevoDesno {
+    0%, 19%  { z-index: 3;}
+    20%, 100%  { z-index: -1;} 
+}
+#sld-0:checked ~ .strelice > .lijeva.s5,
+#sld-0:checked ~ .strelice > .desna.s2 {
+    animation: LijevoDesno 40s infinite -2s linear;
+}
+#sld-0:checked ~ .strelice > .lijeva.s1,
+#sld-0:checked ~ .strelice > .desna.s3 {
+    animation: LijevoDesno 40s infinite 6s linear;
+}
+#sld-0:checked ~ .strelice > .lijeva.s2,
+#sld-0:checked ~ .strelice > .desna.s4 {
+    animation: LijevoDesno 40s infinite 14s linear;
+}
+#sld-0:checked ~ .strelice > .lijeva.s3,
+#sld-0:checked ~ .strelice > .desna.s5 {
+    animation: LijevoDesno 40s infinite 22s linear;
+}
+#sld-0:checked ~ .strelice > .lijeva.s4,
+#sld-0:checked ~ .strelice > .desna.s1 {
+    animation: LijevoDesno 40s infinite 30s linear;
+}
+#sld-1:checked ~ .strelice >  .lijeva.s5,
+#sld-1:checked ~ .strelice >  .desna.s2,
+#sld-2:checked ~ .strelice >  .lijeva.s1,
+#sld-2:checked ~ .strelice >  .desna.s3,
+#sld-3:checked ~ .strelice >  .lijeva.s2,
+#sld-3:checked ~ .strelice >  .desna.s4,
+#sld-4:checked ~ .strelice >  .lijeva.s3,
+#sld-4:checked ~ .strelice >  .desna.s5,
+#sld-5:checked ~ .strelice >  .lijeva.s4,
+#sld-5:checked ~ .strelice >  .desna.s1 {
+    z-index: 3;
+}
+/************************************ Krugovi ****************************/
+.krugovi {
+    position: absolute;
+    z-index: 2;
+    bottom: 2%;
+    width: 100%;
+    text-align: center;
+}
+.krug {
+    z-index: 2;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0% 0.5%;
+    border: 1px solid grey;
+    border-radius: 50%;
+    background: rgba(0,0,0,.2);
+    cursor: pointer;
+}
+#sld-1:checked ~ .krugovi > .s1 .krug,
+#sld-2:checked ~ .krugovi > .s2 .krug,
+#sld-3:checked ~ .krugovi > .s3 .krug,
+#sld-4:checked ~ .krugovi > .s4 .krug,
+#sld-5:checked ~ .krugovi > .s5 .krug {
+    animation: none;
+    background: rgba(0,0,0,1);
+}
+/*********************************************/
+@keyframes promjeniPozadinuKruga {
+    0%, 19%  { background: rgba(0,0,0,1); }
+    20%, 100%  { background: rgba(0,0,0,.2); } 
+}
+#sld-0:checked ~ .krugovi > .s1 .krug {
+    animation: promjeniPozadinuKruga 40s infinite -2s linear;
+}
+#sld-0:checked ~ .krugovi > .s2 .krug {
+    animation: promjeniPozadinuKruga 40s infinite 6s linear;
+}
+#sld-0:checked ~ .krugovi > .s3 .krug {
+    animation: promjeniPozadinuKruga 40s infinite 14s linear;
+}
+#sld-0:checked ~ .krugovi > .s4 .krug {
+    animation: promjeniPozadinuKruga 40s infinite 22s linear;
+}
+#sld-0:checked ~ .krugovi > .s5 .krug {
+    animation: promjeniPozadinuKruga 40s infinite 30s linear;
+}
+/***************************************************/
+@keyframes StopStart {
+    0%, 19%  { z-index: 5;}
+    20%, 100%  { z-index: -1;} 
+}
+#sld-0:checked ~ .autoplej > .s1 {
+    animation: StopStart 40s infinite -2s linear;
+}
+#sld-0:checked ~ .autoplej > .s2 {
+    animation: StopStart 40s infinite 6s linear;
+}
+#sld-0:checked ~ .autoplej > .s3 {
+    animation: StopStart 40s infinite 14s linear;
+}
+#sld-0:checked ~ .autoplej > .s4 {
+    animation: StopStart 40s infinite 22s linear;
+}
+#sld-0:checked ~ .autoplej > .s5 {
+    animation: StopStart 40s infinite 30s linear;
+}
+#sld-1:checked ~ .autoplej > .stop,
+#sld-2:checked ~ .autoplej > .stop,
+#sld-3:checked ~ .autoplej > .stop,
+#sld-4:checked ~ .autoplej > .stop,
+#sld-5:checked ~ .autoplej > .stop {
+    display: none;
+}
+#sld-0:checked ~ .autoplej > .auto {
+    display: none;
+}
+/*********************** Interakcija sa korisnikom ************************/
+.slajder > .autoplej,
+.slajder > .strelice {
+  transition: .5s all 0s ease;
+}
+.slajder:hover .autoplej,
+.slajder:hover .strelice {
+    opacity: 1;
+    transform: translateY(0);
+}
