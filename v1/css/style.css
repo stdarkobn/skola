@@ -62,7 +62,6 @@ p {  padding: 0.8em; }
     background: transparent url(../img/bcg/burger.svg) no-repeat center;
     background-size: contain;
     cursor: pointer;
-    transition: background-color .6s ease-in-out .0s;
 }
 .mobitel > span {
     flex: 1 1 auto;
@@ -78,15 +77,13 @@ p {  padding: 0.8em; }
     margin-bottom: 8px;
     background: #d5d5d5;
     overflow: hidden;
-    max-height: 0px;
-    transform-origin: top left;
-    transform: scaleY(0);
-    transition: max-height .5s ease 0s,
-                transform .4s ease .2s;
 }
 .meni li {
     flex: 1 1 40%;
     list-style: none;
+    height: 0px;
+    transform: scaleY(0);
+    transition: transform .4s ease 0s;
 }
 .meni li a {
     display: block;
@@ -96,8 +93,8 @@ p {  padding: 0.8em; }
     letter-spacing: 0.15em;
     font-weight: bold;
 }
-#m-meni:checked ~ .meni {
-    max-height: 500px;
+#m-meni:checked ~ .meni li {
+    height: auto;
     transform: scaleY(1);
 }
 #m-meni:checked ~ .mobitel > label {
@@ -398,15 +395,14 @@ p {  padding: 0.8em; }
     }
     .meni {
         justify-content: space-between;
-        overflow: auto;
-        max-height: 100%;
-        transform: scaleY(1);
-        transition: none;
     }
     .meni li {
         flex: 1 1 auto; /* Ресетовање */
         width: 12.5%;
         margin: 0px 0px 0px 0px;
+        height: auto;
+        transform: scaleY(1);
+        transition: none;
     }
     .meni li a {
         min-width: auto; /* Ресетовање */
